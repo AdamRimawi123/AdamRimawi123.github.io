@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/If.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<h1>Some Memorable Movies</h1>
+<h3><span class="ital">Some Rap Songs</span> (Adam Rimawi, 2022)</h3>
+<div class="sideBySide">
+<img class="filmStill" onClick="onClick_AMOI_img01()" src="images/SomeRapSongs.png" alt="Some Rap Songs">
+<img class="filmStill"
+onClick="onClick_AMOI_img02()" src="images/SomeRapSongs2.png" alt="Some Rap Songs 2">
+<img class="filmStill"
+onClick="onClick_AMOI_img03()"
+src="images/SomeRapSongs3.png" alt="Some Rap Songs 3">
+</div>
+<p class="filmInfo" id="AMOI_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda harum aliquam, eligendi doloremque aliquid expedita earum temporibus omnis culpa officia incidunt veniam, tempore nam dolorem illum inventore, dignissimos obcaecati. Dicta enim rem ad magni at illum magnam, sint molestiae sequi dolore incidunt mollitia neque et fuga cupiditate minus eum!</p>
+	
+<button type="button" onClick="gotoMovie()" id="gotoMovie_btn">Go to the movie</button>
+
+</body>
+<script>
+
+var gotoMovie_btn = document.getElementById("gotoMovie_btn");
+gotoMovie_btn.style.visibility = "hidden";
+	
+var img01_clicked = false;
+var img02_clicked = false;
+var img03_clicked = false;
+
+var AMOI_text = document.getElementById("AMOI_text");
+
+var AMOI00 = "Some Rap Songs is a short film made by Adam Rimawi. This is his first attempt at creating music videos. Adam chose five rap songs to make music videos for, all of them being different genres and styles. This project was an attempt by Adam to try and find his unique style when it comes to music video creation. All five music videos are tied together through the overarching narrative.";
+
+AMOI_text.innerHTML = AMOI00;
+
+function onClick_AMOI_img01(){
+	AMOI_text.innerHTML = "This first picture is from the second music video in the film. The song is 'Mr Professor' by Cochise. Cooper Tobiaski plays the role of a detective trying to solve a murder. This is one of my personal favorite shots from this segment.";
+	img01_clicked = true;
+	console.log("img01_clicked = " + img01_clicked);
+	revealButton();
+}
+
+function onClick_AMOI_img02(){
+	AMOI_text.innerHTML = "This second picture is from the third music video in the film. The song is 'Merlin's Staff' by Ski Mask The Slump God, and Nolan O'Keefe plays the role of himself playing Ski Mask The Slump God. There is also a cameo from Nardwuar in this segment of the film.";
+	img02_clicked = true;
+	console.log("img02_clicked = " + img02_clicked);
+	revealButton();
+}
+
+function onClick_AMOI_img03(){
+	AMOI_text.innerHTML = "This third picture is from the final music video in the film. The song is 'POISON KLAN' by PLAYTHATBOIZAY. Collin Hillary plays the role of Denzel Curry, as he raps his verse in the song. In this frame specifically Diamond Lee portrays a spectre wandering around this greenery.";
+	img03_clicked = true;
+	console.log("img03_clicked = " + img03_clicked);
+	revealButton();
+}
+	
+function revealButton(){
+	if (img01_clicked && img01_clicked && img01_clicked){
+		console.log("REVEAL BUTTON"); gotoMovie_btn.style.visibility = "visible";
+	}
+}
+
+function gotoMovie(){
+	window.open("https://youtu.be/T3tVupiWw5k?si=5YwvbVBQwxDwhcNB", "_blank")
+}
+</script>
+</html>
