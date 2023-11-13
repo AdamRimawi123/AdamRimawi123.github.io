@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>video</title>
+<link href="css/truism.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div>
+<video id="displayed_video" preload="auto" muted="muted" autoplay="autoplay" loop="loop" >
+<source src="video/Truism_Project_Compressed.mp4" type="video/mp4">
+</video>
+</div>
+	
+<div class="centered_text">
+<h1 id="truism" onmouseover="outTruismText()" onmouseout="outTruismText()" onClick="changeVideo()">Just believing something can make it happen</h1>
+</div>
+
+<script>
+
+var channel = 1;
+var pausedAt = 0;
+	
+var mySound = new Audio("sound/Westside_Gunn_Peace_Flygod.mp3")
+
+var displayed_video = document.getElementById("displayed_video");
+
+var BTS = "video/Truism_Project_Compressed.mp4";
+var Truism2 = "video/IMG_3065.mp4";
+
+function OnTruismText(){
+	console.log("clicked truism text")
+	document.getElementById("displayed_video").style.filter = "sepia(100%)";
+}
+	
+function outTruismText(){
+	console.log("moving out of truism text")
+	document.getElementById("displayed_video").style.filter = "sepia(0%)"
+}
+
+function changeVideo(){
+	console.log("will change video");
+	pausedAt = displayed_video.currentTime;
+	if (channel == 0){
+		displayed_video.src = BTS;
+		displayed_video.currentTime = pausedAt;
+		channel = 1;
+	}else{
+		displayed_video.src = Truism2;
+		displayed_video.currentTime = pausedAt;
+		channel = 0;
+		}
+	
+	mySound.play();
+}
+
+</script>
+
+
+</body>
+</html>
